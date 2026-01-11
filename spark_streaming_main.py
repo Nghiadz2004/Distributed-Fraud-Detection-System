@@ -85,7 +85,8 @@ def main():
         .format("kafka") \
         .option("kafka.bootstrap.servers", KAFKA_SERVER) \
         .option("subscribe", "transactions") \
-        .option("startingOffsets", "latest") \
+        .option("startingOffsets", "earliest") \
+        .option("maxOffsetsPerTrigger", 1000) \
         .load()
 
     # Parse JSON
@@ -142,8 +143,7 @@ def main():
             .withColumn("p_Day", col("Day"))
 
         # Ghi file CSV
-        final_df_with_partition.coalesce(1) \
-            .write \
+        final_df_with_partition.write \
             .mode("append") \
             .partitionBy("p_Year", "p_Month", "p_Day") \
             .option("header", "true") \
@@ -155,7 +155,7 @@ def main():
         .foreachBatch(process_batch_data) \
         .outputMode("append") \
         .option("checkpointLocation", CHECKPOINT_PATH) \
-        .trigger(processingTime="10 seconds") \
+        .trigger(processingTime="15 seconds") \
         .start()
         
     query.awaitTermination()
