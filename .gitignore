@@ -1,0 +1,5 @@
+# Loại bỏ các file checkpoint
+*.txt
+
+# Loại bỏ các file dữ liệu được chia nhỏ tạm thời
+part_*.csv

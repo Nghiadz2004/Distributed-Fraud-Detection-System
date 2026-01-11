@@ -80,7 +80,9 @@ def send_to_kafka(currency, rate):
                 "timestamp": datetime.now().isoformat() # Định dạng thời gian chuẩn ISO
             }
             # Gửi tin nhắn bất đồng bộ
-            producer.send(KAFKA_TOPIC, value=message)
+            producer.send(KAFKA_TOPIC, 
+                          value=message,
+                          key=currency.encode('utf-8'))
             producer.flush() # Đẩy tin đi ngay lập tức
             print(f"📨 [Kafka] Message sent: {message}")
         except Exception as e:
