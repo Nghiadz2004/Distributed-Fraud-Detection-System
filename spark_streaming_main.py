@@ -2,6 +2,7 @@ import sys
 import json
 import threading
 from time import sleep
+import uuid
 
 # Import PySpark & Kafka dependencies
 from pyspark.sql import SparkSession
@@ -30,7 +31,9 @@ def fetch_exchange_rate():
     consumer = KafkaConsumer(
         'exchange_rates',
         bootstrap_servers=[KAFKA_SERVER],
+        group_id=f"rate_reader_{uuid.uuid4()}",
         auto_offset_reset='earliest',
+        enable_auto_commit=False,
         value_deserializer=lambda x: json.loads(x.decode('utf-8'))
     )
     print(">>> Đang lắng nghe topic exchange_rates...")
@@ -86,7 +89,7 @@ def main():
         .option("kafka.bootstrap.servers", KAFKA_SERVER) \
         .option("subscribe", "transactions") \
         .option("startingOffsets", "earliest") \
-        .option("maxOffsetsPerTrigger", 1000) \
+        .option("maxOffsetsPerTrigger", 10000) \
         .load()
 
     # Parse JSON
@@ -133,17 +136,21 @@ def main():
         final_df = df.withColumn("Exchange_Rate", lit(current_rate_val)) \
                      .withColumn("Amount_VND", col("Amount_USD") * lit(current_rate_val))
 
+        final_df_deduped = final_df.dropDuplicates([
+            "User", "Card", "Transaction_Date", "Transaction_Time", "Amount_USD", "Merchant Name"
+        ])
+
         print(f"--- Batch ID: {epoch_id} | Rate: {current_rate_val} ---")
         final_df.show(5, truncate=False)
 
         # Tạo cột phụ để dùng cho Partition
-        final_df_with_partition = final_df \
+        final_df_with_partition = final_df_deduped \
             .withColumn("p_Year", col("Year")) \
             .withColumn("p_Month", col("Month")) \
             .withColumn("p_Day", col("Day"))
 
         # Ghi file CSV
-        final_df_with_partition.write \
+        final_df_with_partition.coalesce(1).write \
             .mode("append") \
             .partitionBy("p_Year", "p_Month", "p_Day") \
             .option("header", "true") \
@@ -155,7 +162,6 @@ def main():
         .foreachBatch(process_batch_data) \
         .outputMode("append") \
         .option("checkpointLocation", CHECKPOINT_PATH) \
-        .trigger(processingTime="15 seconds") \
         .start()
         
     query.awaitTermination()
