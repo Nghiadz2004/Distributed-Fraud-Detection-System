@@ -102,7 +102,7 @@ def main():
     # ---------------------------------------------------------    
     processed_df = json_df \
         .withColumn("Amount_Clean", 
-                    abs(regexp_replace(col("Amount"), "\\$", "").cast("double"))) \
+                    regexp_replace(col("Amount"), "\\$", "").cast("double")) \
         .withColumn("Transaction_Date", 
                     concat(col("Day"), lit("/"), col("Month"), lit("/"), col("Year"))) \
         .withColumn("Transaction_Time", col("Time")) \
