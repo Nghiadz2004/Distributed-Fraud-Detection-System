@@ -5,14 +5,15 @@ import json
 import os
 import multiprocessing  # <--- Thư viện quan trọng để chạy song song
 from kafka import KafkaProducer
+import config
 
 # --- CẤU HÌNH CHUNG ---
-SERVER_IP = '100.109.42.7'
-KAFKA_TOPIC = 'transactions'
-KAFKA_BOOTSTRAP_SERVERS = [f'{SERVER_IP}:9092']
-ORIGINAL_FILE = 'data/User0_credit_card_transactions.csv'
-NUM_WORKERS = 3
-GLOBAL_CHECKPOINT_FILE = 'checkpoint.txt'
+SERVER_IP = config.SERVER_IP
+KAFKA_TOPIC = config.KAFKA_TRANSACTIONS
+KAFKA_BOOTSTRAP_SERVERS = config.KAFKA_BOOTSTRAP_SERVERS
+ORIGINAL_FILE = config.ORIGINAL_FILE
+NUM_WORKERS = config.NUM_WORKERS
+GLOBAL_CHECKPOINT_FILE = config.GLOBAL_CHECKPOINT_FILE
 
 # ---------------------------------------------------------
 # HÀM 1: TỰ ĐỘNG CHIA FILE (SPLITTER)
@@ -109,7 +110,7 @@ def run_producer_worker(file_path, worker_id):
     # 3. Khởi tạo Kafka Producer (QUAN TRỌNG: Phải tạo bên trong hàm worker)
     # Không được tạo ở ngoài rồi truyền vào vì Producer không thread-safe khi qua process
     producer = KafkaProducer(
-        bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
+        bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS, # Tự lấy từ .bashrc
         value_serializer=lambda x: json.dumps(x).encode('utf-8'),
         linger_ms=10, batch_size=16384  # Tối ưu tốc độ
     )
