@@ -16,7 +16,8 @@ Hệ thống có khả năng tiếp nhận luồng giao dịch liên tục từ 
 
 ## 🏗 Kiến trúc hệ thống (Architecture)
 
-![Sơ đồ kiến trúc hệ thống Big Data](link_dan_toi_anh_cua_ban.png)
+<img width="796" height="446" alt="Screenshot 2026-02-02 235941" src="https://github.com/user-attachments/assets/9a327c90-460e-45f4-9f15-6940650e5a20" />
+
 *Hình 1: Sơ đồ luồng dữ liệu End-to-End của hệ thống*
 
 Hệ thống tuân theo kiến trúc **Lambda Architecture** thu nhỏ, tập trung vào Streaming Processing, triển khai trên cụm **Mini-Cluster gồm 4 Nodes** kết nối qua VPN (Tailscale).
