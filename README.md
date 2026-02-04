@@ -16,11 +16,13 @@ Hệ thống có khả năng tiếp nhận luồng giao dịch liên tục từ 
 
 ## 🏗 Kiến trúc hệ thống (Architecture)
 
-<p align="center">
+<div align="center">
    <img width="796" height="446" src="./assets/odap_architecture.jpg" />
-</p>
+   <div style="display: block; margin-top: 10px;">
+      <i>Hình 1: Sơ đồ luồng dữ liệu End-to-End của hệ thống.</i>
+   </div>
+</div>
 
-*Hình 1: Sơ đồ luồng dữ liệu End-to-End của hệ thống*
 
 Hệ thống tuân theo kiến trúc **Lambda Architecture** thu nhỏ, tập trung vào Streaming Processing, triển khai trên cụm **Mini-Cluster gồm 4 Nodes** kết nối qua VPN (Tailscale).
 
@@ -132,35 +134,39 @@ Tìm file `daily_credit_card_pipeline.py` mà bạn vừa đưa vào và bật l
 Hệ thống cung cấp Dashboard trên Power BI trả lời 10 câu hỏi nghiệp vụ quan trọng, bao gồm:
 
 <div align="center">
-  <img width="796" height="446" src="./assets/c1.png" />
-  <div style="display: block; margin-top: 10px;">
-    <i>Hình 2: Thời điểm và khung giờ có lượng giao dịch bất thường.</i>
-  </div>
+   <img width="796" height="446" src="./assets/c1.png" />
+   <div style="display: block; margin-top: 10px;">
+      <i>Hình 2: Thời điểm và khung giờ có lượng giao dịch bất thường.</i>
+   </div>
 </div>
 
-<p align="center">
+<div align="center">
    <img width="796" height="446" src="./assets/c2.png" />
-   
-   <i>Hình 3: Top thành phố có tổng giá trị giao dịch cao nhất.</i>
-</p>
+   <div style="display: block; margin-top: 10px;">
+      <i>Hình 3: Top thành phố có tổng giá trị giao dịch cao nhất.</i>
+   </div>
+</div>
 
-<p align="center">
+<div align="center">
    <img width="796" height="446" src="./assets/c3.png" />
-   
-   <i>Hình 4: Tỷ lệ gian lận theo khu vực địa lý.</i>
-</p>
+   <div style="display: block; margin-top: 10px;">
+      <i>Hình 4: Tỷ lệ gian lận theo khu vực địa lý.</i>
+   </div>
+</div>
 
-<p align="center">
-   <img width="796" height="446" src="./assets/c4.png" />
-   
-   <i>Hình 5: Danh sách người dùng có hành vi đáng ngờ (nhiều giao dịch liên tiếp).</i>
-</p>
+<div align="center">
+   <img width="796" height="446" src="./assets/c3.png" />
+   <div style="display: block; margin-top: 10px;">
+      <i>Hình 5: Danh sách người dùng có hành vi đáng ngờ (nhiều giao dịch liên tiếp).</i>
+   </div>
+</div>
 
-<p align="center">
-   <img width="796" height="446" src="./assets/c5.png" />
-   
-   <i>Hình 6: Xu hướng gian lận theo thời gian.</i>
-</p>
+<div align="center">
+   <img width="796" height="446" src="./assets/c3.png" />
+   <div style="display: block; margin-top: 10px;">
+      <i>Hình 6: Xu hướng gian lận theo thời gian.</i>
+   </div>
+</div>
 
 ## 👥 Thành viên thực hiện (Authors)
 | MSSV | Họ và Tên | Vai trò chính |
