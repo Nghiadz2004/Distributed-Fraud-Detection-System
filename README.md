@@ -67,7 +67,10 @@ Hệ thống tuân theo kiến trúc **Lambda Architecture** thu nhỏ, tập tr
 * Hệ điều hành: Linux (Ubuntu/CentOS) hoặc Windows với WSL 2.
 * Java JDK 8/11.
 * Python 3.8+.
-* Tài khoản Power BI Pro (để publish báo cáo).
+* Tài khoản Power BI Pro.
+* Tải và cài đặt Hadoop: (HDFS)[https://github.com/Ming3993/Introduction-to-Big-Data/tree/main/Lab%201]
+* Tải và cài đặt Databricks ODBC Driver: (Databricks ODBC Driver)[https://www.databricks.com/spark/odbc-drivers-download]
+* Tải và cài đặt Apache Airflow: (Airflow)[https://www.youtube.com/watch?v=ufLUwm5C5Z0]
 
 ### Bước 1: Thiết lập hạ tầng
 Cấu hình file `hosts` và Tailscale cho các node trong cụm Cluster để thông suốt mạng.
@@ -109,12 +112,19 @@ chmod +x run_spark_streaming.sh
 * Sử dụng Spark package phiên bản: 3.5.5.
 * File thực thi chính là: spark_streaming_main.py
 
-### Bước 4: Lập lịch với Airflow
+### Bước 4: Khởi động với Airflow
 Kích hoạt Airflow Scheduler và Webserver để quản lý quy trình làm mới dữ liệu tự động.
 ```bash
 airflow webserver -p 8080
 airflow scheduler
 ```
+
+### Bước 5: Lập lịch với Airflow
+Đưa file `.dag` trong repos vào thư mực `AIRFLOW_HOME/dags`  
+
+Truy cập vào webserver tại `localhost:8080`  
+
+Tìm file `.dag` mà bạn vừa đưa vào và bật lên
 
 ## 📊 Dashboard & Phân tích
 Hệ thống cung cấp Dashboard trên Power BI trả lời 10 câu hỏi nghiệp vụ quan trọng, bao gồm:
