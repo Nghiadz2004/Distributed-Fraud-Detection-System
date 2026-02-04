@@ -131,10 +131,12 @@ Tìm file `daily_credit_card_pipeline.py` mà bạn vừa đưa vào và bật l
 ## 📊 Dashboard & Phân tích
 Hệ thống cung cấp Dashboard trên Power BI trả lời 10 câu hỏi nghiệp vụ quan trọng, bao gồm:
 
-<p align="center">
-  <img width="796" height="446" src="./assets/c1.png" /><br>
-  <center><i>Hình 2: Thời điểm và khung giờ có lượng giao dịch bất thường.</i></center>
-</p>
+<div align="center">
+  <img width="796" height="446" src="./assets/c1.png" />
+  <div style="display: block; margin-top: 10px;">
+    <i>Hình 2: Thời điểm và khung giờ có lượng giao dịch bất thường.</i>
+  </div>
+</div>
 
 <p align="center">
    <img width="796" height="446" src="./assets/c2.png" />
