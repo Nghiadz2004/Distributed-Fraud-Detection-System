@@ -120,11 +120,11 @@ airflow scheduler
 ```
 
 ### Bước 5: Lập lịch với Airflow
-Đưa file `.dag` trong repos vào thư mực `AIRFLOW_HOME/dags`  
+Đưa file `daily_credit_card_pipeline.py` trong repos vào thư mực `AIRFLOW_HOME/dags`  
 
 Truy cập vào webserver tại `localhost:8080`  
 
-Tìm file `.dag` mà bạn vừa đưa vào và bật lên
+Tìm file `daily_credit_card_pipeline.py` mà bạn vừa đưa vào và bật lên
 
 ## 📊 Dashboard & Phân tích
 Hệ thống cung cấp Dashboard trên Power BI trả lời 10 câu hỏi nghiệp vụ quan trọng, bao gồm:
