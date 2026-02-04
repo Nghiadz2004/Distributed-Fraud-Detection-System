@@ -16,7 +16,7 @@ Hệ thống có khả năng tiếp nhận luồng giao dịch liên tục từ 
 
 ## 🏗 Kiến trúc hệ thống (Architecture)
 
-<img width="796" height="446" alt="Screenshot 2026-02-02 235941" src="https://github.com/user-attachments/assets/9a327c90-460e-45f4-9f15-6940650e5a20" />
+<img width="796" height="446" src="./assets/odap_architecture.jpg" />
 
 *Hình 1: Sơ đồ luồng dữ liệu End-to-End của hệ thống*
 
