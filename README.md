@@ -68,9 +68,9 @@ Hệ thống tuân theo kiến trúc **Lambda Architecture** thu nhỏ, tập tr
 * Java JDK 8/11.
 * Python 3.8+.
 * Tài khoản Power BI Pro.
-* Tải và cài đặt Hadoop: (HDFS)[https://github.com/Ming3993/Introduction-to-Big-Data/tree/main/Lab%201]
-* Tải và cài đặt Databricks ODBC Driver: (Databricks ODBC Driver)[https://www.databricks.com/spark/odbc-drivers-download]
-* Tải và cài đặt Apache Airflow: (Airflow)[https://www.youtube.com/watch?v=ufLUwm5C5Z0]
+* Tải và cài đặt Hadoop: [HDFS](https://github.com/Ming3993/Introduction-to-Big-Data/tree/main/Lab%201)
+* Tải và cài đặt Databricks ODBC Driver: [Databricks ODBC Driver](https://www.databricks.com/spark/odbc-drivers-download)
+* Tải và cài đặt Apache Airflow: [Airflow](https://www.youtube.com/watch?v=ufLUwm5C5Z0)
 
 ### Bước 1: Thiết lập hạ tầng
 Cấu hình file `hosts` và Tailscale cho các node trong cụm Cluster để thông suốt mạng.
