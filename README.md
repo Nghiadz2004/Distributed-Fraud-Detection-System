@@ -131,23 +131,32 @@ Tìm file `daily_credit_card_pipeline.py` mà bạn vừa đưa vào và bật l
 ## 📊 Dashboard & Phân tích
 Hệ thống cung cấp Dashboard trên Power BI trả lời 10 câu hỏi nghiệp vụ quan trọng, bao gồm:
 
-<img width="796" height="446" src="./assets/c1.png" />
+<p align="center">
+   <img width="796" height="446" src="./assets/c1.png" />
+</p>
 
 *Hình 2: Thời điểm và khung giờ có lượng giao dịch bất thường.*
 
-<img width="796" height="446" src="./assets/c2.png" />
+<p align="center">
+   <img width="796" height="446" src="./assets/c2.png" />
+</p>
 
 *Hình 3: Top thành phố có tổng giá trị giao dịch cao nhất.*
 
-<img width="796" height="446" src="./assets/c3.png" />
+<p align="center">
+   <img width="796" height="446" src="./assets/c3.png" />
+</p>
 
 *Hình 4: Tỷ lệ gian lận theo khu vực địa lý.*
 
-<img width="796" height="446" src="./assets/c4.png" />
+<p align="center">
+   <img width="796" height="446" src="./assets/c4.png" />
+</p>
 
 *Hình 5: Danh sách người dùng có hành vi đáng ngờ (nhiều giao dịch liên tiếp).*
-
-<img width="796" height="446" src="./assets/c5.png" />
+<p align="center">
+   <img width="796" height="446" src="./assets/c5.png" />
+</p>
 
 *Hình 6: Xu hướng gian lận theo thời gian.*
 
