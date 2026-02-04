@@ -133,32 +133,28 @@ Hệ thống cung cấp Dashboard trên Power BI trả lời 10 câu hỏi nghi�
 
 <p align="center">
    <img width="796" height="446" src="./assets/c1.png" />
+   <i>Hình 2: Thời điểm và khung giờ có lượng giao dịch bất thường.</i>
 </p>
-
-*Hình 2: Thời điểm và khung giờ có lượng giao dịch bất thường.*
 
 <p align="center">
    <img width="796" height="446" src="./assets/c2.png" />
+   <i>Hình 3: Top thành phố có tổng giá trị giao dịch cao nhất.</i>
 </p>
-
-*Hình 3: Top thành phố có tổng giá trị giao dịch cao nhất.*
 
 <p align="center">
    <img width="796" height="446" src="./assets/c3.png" />
+   <i>Hình 4: Tỷ lệ gian lận theo khu vực địa lý.</i>
 </p>
-
-*Hình 4: Tỷ lệ gian lận theo khu vực địa lý.*
 
 <p align="center">
    <img width="796" height="446" src="./assets/c4.png" />
+   <i>Hình 5: Danh sách người dùng có hành vi đáng ngờ (nhiều giao dịch liên tiếp).</i>
 </p>
 
-*Hình 5: Danh sách người dùng có hành vi đáng ngờ (nhiều giao dịch liên tiếp).*
 <p align="center">
    <img width="796" height="446" src="./assets/c5.png" />
+   <i>Hình 6: Xu hướng gian lận theo thời gian.</i>
 </p>
-
-*Hình 6: Xu hướng gian lận theo thời gian.*
 
 ## 👥 Thành viên thực hiện (Authors)
 | MSSV | Họ và Tên | Vai trò chính |
