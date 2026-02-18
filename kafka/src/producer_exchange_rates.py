@@ -7,11 +7,6 @@ from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 from kafka import KafkaProducer
 
-# CẤU HÌNH KAFKA 
-SERVER_IP = '100.109.42.7'
-KAFKA_TOPIC = 'exchange_rates'
-KAFKA_BOOTSTRAP_SERVERS = [f'{SERVER_IP}:9092']
-
 # Khởi tạo Producer (Dùng try-catch để tránh crash nếu Kafka chưa bật)
 producer = None
 try:
