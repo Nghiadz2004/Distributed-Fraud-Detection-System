@@ -9,6 +9,7 @@
 ![PowerBI](https://img.shields.io/badge/Power_BI-Analytics-yellowgreen)
 
 ## Cấu trúc thư mục
+```bash
 ├── 📁 assets
 │   ├── 🖼️ c1.png
 │   ├── 🖼️ c2.png
@@ -53,6 +54,7 @@
 │       └── 🐍 spark_streaming_main.py
 ├── ⚙️ .gitignore
 └── 📝 README.md
+```
 
 ## 📖 Giới thiệu (Overview)
 
