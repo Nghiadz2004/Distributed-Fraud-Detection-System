@@ -84,9 +84,18 @@ Khởi động các dịch vụ nền tảng:
 start-dfs.sh
 start-yarn.sh
 
-# Khởi động Kafka (Zookeeper & Broker)
-bin/zookeeper-server-start.sh config/zookeeper.properties
-bin/kafka-server-start.sh config/server.properties
+# Khởi động Thrfiftserver với cấu hình cho trước
+bash start-connector.sh
+
+# Khởi động Kafka (Kraft & Broker)
+# 1. Tạo Cluster ID mới
+KAFKA_CLUSTER_ID=$(kafka-storage.sh random-uuid)
+
+# 2. Format thư mục config của Kraft server
+kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c $KAFKA_HOME/config/kraft/server.properties
+
+# 3. Start Kafka
+kafka-server-start.sh $KAFKA_HOME/config/kraft/server.properties
 ```
 
 ### Bước 2: Kích hoạt Producer (Giả lập dữ liệu)

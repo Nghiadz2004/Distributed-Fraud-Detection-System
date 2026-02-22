@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+<configuration>
+
+<!-- Site specific YARN configuration properties -->
+	<property>
+		<name>yarn.resourcemanager.hostname</name>
+		<value>hadoop</value>
+		<description>Hostname hoặc IP của máy chạy ResourceManager (Master Node). Tất cả các NodeManager trong cluster sẽ tìm và kết nối đến địa chỉ này để nhận lệnh.</description>
+	</property>
+
+	<property>
+		<name>yarn.nodemanager.aux-services</name>
+		<value>mapreduce_shuffle</value>
+		<description>Bật dịch vụ phụ trợ cho MapReduce. Dịch vụ này (Shuffle Handler) là bắt buộc để dữ liệu có thể chuyển từ Mapper sang Reducer.</description>
+	</property>
+
+	<property>
+		<name>yarn.nodemanager.address</name>
+		<value>0.0.0.0:31123</value> 
+		<description>Địa chỉ và cổng RPC của NodeManager. Cổng này (31123) sẽ trở thành một phần của Node-ID (ví dụ: hadoop:31123). Dùng 0.0.0.0 để lắng nghe trên mọi card mạng (LAN/Tailscale).</description>
+	</property>
+
+	<property>
+        	<name>yarn.nodemanager.webapp.address</name>
+	        <value>0.0.0.0:8042</value>
+		<description>Địa chỉ Web UI của NodeManager. Cổng này (8042) dùng để truy cập xem log của các container trên trình duyệt. 0.0.0.0 giúp bạn xem được log từ xa qua IP Tailscale.</description>
+	</property>
+
+	<property>
+        	<name>yarn.nodemanager.localizer.address</name>
+	        <value>0.0.0.0:8040</value>
+		<description>Địa chỉ của dịch vụ Localizer. Dùng để tải file .jar, cấu hình về máy node trước khi chạy job. Cố định cổng này giúp dễ dàng cấu hình tường lửa (Firewall).</description>
+	</property>
+
+	<property>
+		<name>yarn.node-labels.enabled</name>
+		<value>true</value>
+		<description>Kích hoạt tính năng Node Labels trên cluster. Tính năng này cho phép gắn nhãn phân loại cho các máy (ví dụ: máy GPU, máy High-RAM) để điều hướng các Job đặc thù vào đúng nhóm máy mong muốn.</description>
+	</property>
+
+	<property>
+		<name>yarn.node-labels.fs-store.root-dir</name>
+		<value>hdfs://hadoop:9000/system/yarn/node-labels</value>
+		<description>Đường dẫn tuyệt đối trên HDFS dùng để lưu trữ dữ liệu về các nhãn (Labels). ResourceManager sẽ ghi và đọc cấu hình nhãn từ đây để đảm bảo thông tin không bị mất khi khởi động lại cluster.</description>
+	</property>
+
+        <property>
+                <name>yarn.nodemanager.resource.memory-mb</name>
+                <value>11264</value>
+                <description>(Worker chính) cấu hình nhiều tài nguyên để các workload mặc định được đẩy sang máy này.</description>
+        </property>
+</configuration>
