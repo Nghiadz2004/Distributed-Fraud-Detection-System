@@ -1,0 +1,11 @@
+# --- Các Node vật lý / Host chính (Qua Tailscale) ---
+100.81.81.12   pve      # Proxmox VE Host (Subnet Router)
+100.99.156.93  fedora   # Worker Node (Máy vật lý bên ngoài)
+
+# --- Các Container / Dịch vụ bên trong Proxmox Bridge ---
+# Ghi chú: Các IP này thuộc dải mạng nội bộ 10.10.10.0/24. 
+# Nhờ tính năng Subnet Routing của Tailscale trên máy 'pve', 
+# các máy bên ngoài như 'fedora' có thể truy cập trực tiếp các IP này.
+
+10.10.10.101   hadoop   # Master Node (ResourceManager, NameNode)
+10.10.10.102   minio    # S3 Storage (Data Lakehouse)
