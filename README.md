@@ -72,7 +72,7 @@ Hệ thống có khả năng tiếp nhận luồng giao dịch liên tục từ 
 </div>
 
 
-Hệ thống tuân theo kiến trúc **Lambda Architecture** thu nhỏ, tập trung vào Streaming Processing, triển khai trên cụm **Mini-Cluster gồm 4 Nodes** kết nối qua VPN (Tailscale).
+Hệ thống tuân theo kiến trúc **Lambda Architecture** thu nhỏ, tập trung vào Streaming Processing, triển khai trên cụm **Mini-Cluster gồm 4 Nodes** kết nối qua VPN (Tailscale). Chi tiết ý tưởng và triển khai xem trong `doc/Report.pdf`
 
 ### Luồng dữ liệu (Data Flow):
 1.  **Ingestion Layer:** 
